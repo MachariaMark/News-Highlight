@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body class="bg-dark">
+
+    <div class="container-fluid">
+        <div style="text-align: center; color:red; padding: 4px;">
+            <h2>ENTERTAINMENT NEWS</h2>
+        </div>
+
+        <div class="row">
+            <hr>
+        </div>
+
+        <div class="row">
+
+            {%for headline in entertainment %}
+            <div class="col-md-3">
+                <div class="card black darken-3">
+                    <div class="view overlay">
+                        <img class="card-img-top" height="200px" src="{{headline.urlToImage}}" alt="story image"
+                            onerror="this.onerror=null;this.src='http://www.nlpca.co.uk/blog/wp-content/uploads/2015/03/entertainment_news_stopimage.jpg';">
+                        <a>
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+                    <div class="card-body elegant-color white-text rounded-bottom">
+                        <a class="activator waves-effect mr-4" href="{{headline.url}}"><i class="fas fa-info-circle white-text"></i></a>
+                        <h4 class="card-title">{{headline.name}}</h4>
+                        <hr class="hr-light">
+                        <p class="card-text white-text mb-4">{{headline.title  | truncate(200)}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <hr>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+{% endblock %}
+{% block footer %}
+{% include 'movie.html' %}
+{% endblock %}
