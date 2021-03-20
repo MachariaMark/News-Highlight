@@ -6,7 +6,7 @@ Flask-Bootstrap4==4.0.2
 Flask-Script==2.0.6
 gunicorn==19.9.0
 itsdangerous==1.1.0
-Jinja2==2.10.3
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 pycodestyle==2.5.0
 visitor==0.1.3
